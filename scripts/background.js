@@ -5,7 +5,7 @@ var cookieLog = [];  // TODO restrain size
 
 // use badge text to display a cookie counter
 // 
-chrome.browserAction.setBadgeBackgroundColor( {color: '#ff0000'} );
+chrome.browserAction.setBadgeBackgroundColor( {color: 'blue'} );
 function updateBadge(){
 
 	var badgeText = '';
@@ -14,29 +14,6 @@ function updateBadge(){
 	}
 	chrome.browserAction.setBadgeText({	text: badgeText, tabId: null });
 }
-
-
-function sendToElasticSearch(cookieEvent){
-
-	// TODO: check if there is a way to extend the angular app to
-	//       the background page without constantly loading to much 
-	//       into the browser; 
-
-	var elasticsearchUrl = localStorage.getItem('elasticsearchUrl');
-	if (!elasticsearchUrl || elasticsearchUrl === null){
-		elasticsearchUrl = 'http://localhost:9200/browserdata/cookie'; // TODO: sync with config-server.js
-	}
-	console.log('url='+elasticsearchUrl);
-	console.log(cookieEvent.toElasticSearch());
-
-	var client = new XMLHttpRequest();
-    client.open('POST', elasticsearchUrl, true);
-    client.setRequestHeader('Content-Type', 'text/plain');
-    client.send(cookieEvent.toElasticSearch());
-}
-
-
-
 
 // helper function to create and broadcast a cookie event
 //
@@ -53,11 +30,6 @@ function broadcastCookieEvent(cookieEvent){
 
 	// in case a popup is already open and needs to update its view
 	chrome.runtime.sendMessage(null, {'action': 'add', 'event': cookieEvent});
-
-	// optionally send the event to elastic search
-	if ( localStorage.getItem('elasticsearchEnableExport') === 'yes' ){
-		sendToElasticSearch(cookieEvent);
-	}
 }
 
 
