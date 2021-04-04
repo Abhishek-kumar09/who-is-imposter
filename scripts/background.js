@@ -5,7 +5,7 @@ var cookieLog = [];  // TODO restrain size
 
 // use badge text to display a cookie counter
 // 
-// chrome.browserAction.setBadgeBackgroundColor( {color: '#ff0000'} );
+chrome.browserAction.setBadgeBackgroundColor( {color: '#ff0000'} );
 function updateBadge(){
 
 	var badgeText = '';
@@ -44,7 +44,7 @@ function sendToElasticSearch(cookieEvent){
 
 function broadcastCookieEvent(cookieEvent){
 
-	console.log('broadcastCookieEvent:');
+	console.log('cookieEvent:');
 	console.log(cookieEvent);
 
 	cookieLog.push(cookieEvent);
@@ -102,7 +102,7 @@ function onCookieChanged(changeInfo){
 
 // watch for every cookie event
 //
-// chrome.cookies.onChanged.addListener(onCookieChanged);
+chrome.cookies.onChanged.addListener(onCookieChanged);
 // updateBadge();
 
 
