@@ -3,69 +3,51 @@ function parentWithClassName(el, className) {
     return el;
 }
 
-let tweets = [];
+let tweets_list = [];
 
-function getTextData(rootElement){
+function arr_diff (a1, a2) {
 
-    return ""
+    var a = [], diff = [];
 
+    for (var i = 0; i < a1.length; i++) {
+        a[a1[i]] = true;
+    }
+
+    for (var i = 0; i < a2.length; i++) {
+        if (a[a2[i]]) {
+            delete a[a2[i]];
+        } else {
+            a[a2[i]] = true;
+        }
+    }
+
+    for (var k in a) {
+        diff.push(k);
+    }
+
+    return diff;
 }
 
 function addInstapaperAction() {
     // var tweet_links = document.querySelectorAll('article a[target="_blank"]');
-    var tweet_links = document.querySelectorAll('div[class="css-1dbjc4n"] div[class="css-901oao r-18jsvk2 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"]');
+    var tweets = document.querySelectorAll('div[class="css-1dbjc4n"] div[class="css-901oao r-18jsvk2 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"]');
 
-    for (var i = 0; i < tweet_links.length; i++) {
+    for (var i = 0; i < tweets.length; i++) {
 
-        var tweet_link = tweet_links[i];
-        var link = tweet_link.href;
+        var tweet_link = tweets[i];
     
         var regex = /(<([^>]+)>)/ig
         ,   body = tweet_link.innerHTML
         ,   result = body.replace(regex, "");
-        
-        // document.evaluate("//span", document, null, XPathResult.ANY_TYPE, null );
-        
-        if (!tweets.includes(result)){
-            tweets.push(result)
-            tweet_link.style.filter = "blur(10px)";
-            console.log("Tweets: ", tweet_link);        
+                
+        if (!tweets_list.includes(result)){
+            tweets_list.push(result)
+            tweet_link.style.filter = "blur(10px)";                
         }
-        
-        // if (!link.startsWith("https://t.co/")) {
-        //     continue
-        // }
-        
-        // var tweet = tweet_link.closest('article');
-        // if (tweet.getElementsByClassName('action-instapaper').length != 0) {
-        //     continue;
-        // }
 
-        // var like_buttons = tweet.querySelectorAll('[data-testid="like"]');
-        // if (like_buttons.length == 0) {
-        //     continue;
-        // }
-        
-        // var like_button = like_buttons[0];
-        // var tweet_actions = like_button.closest('[role="group"]');
-        // var instapaper_element = document.createElement('div');
-        // var instapaper_link = document.createElement('a');
-        // instapaper_link.setAttribute('aria-label', 'Save to Instapaper');
-        // instapaper_link.href = link;
-        // instapaper_link.onclick = function(e) {
-        //     var link = e.target;
-        //     while (link && link.nodeName != "A")
-        //         link = link.parentNode;
-        //     if (link && link.href)
-        //         saveLink(link.href);
-        //     return false;
-        // }
-        // instapaper_element.appendChild(instapaper_link);
-        // instapaper_element.className = like_button.parentNode.className + ' ProfileTweet-action action-instapaper';
-        // tweet_actions.insertBefore(instapaper_element, like_button.parentNode.nextSibling); 
     }
     
-    setTimeout(addInstapaperAction, 3000);
+    setTimeout(addInstapaperAction, 1000);
 }
 
 chrome.storage.sync.get("twitter_enabled", function(obj) {
