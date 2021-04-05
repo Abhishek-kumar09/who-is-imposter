@@ -11,7 +11,9 @@
   "background": {
     "scripts": [
       "scripts/cookie-event.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/scraping/scrapeGoogleForm2.js"
+
     ],
     "persistent": false
   },

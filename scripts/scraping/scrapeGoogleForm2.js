@@ -21,7 +21,9 @@ const fieldsXpaths = [];
 
 //const numberOfFields =  $(".freebirdFormviewerViewCenteredContent").attr("data-last-entry");
 //const numberOfFields = await page.$x('//*[@id="mG61Hd"]/@data-last-entry')
-const numberOfFields = await page.$x('//form[@id="mG61Hd"]/@data-last-entry')
+//const numberOfFields = await page.$x('//form[@id="mG61Hd"]/@data-last-entry')
+
+const numberOfFields = 20;
 
 
 console.log(numberOfFields, '\n')
