@@ -15,7 +15,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 });
 
 function bookmarklet() {
-    console.log('Tracking')
     chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
         chrome.tabs.sendMessage(tabs[0].id, {'message': 'bookmarklet'});
     });

@@ -2,18 +2,17 @@
   "name": "Who is Imposter",
   "description": "Get to know the secret surprises behind who let your data sucked",
   "version": "1.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "icons": {
     "128": "./assets/icon128.png",
     "48": "./assets/icon48.png",
     "16": "./assets/icon16.png"
   },
   "action": {
-    "default_icon": "./assets/icon16.png",
     "default_popup": "popup.html"
   },
   "background":{
-    "scripts": ["background.js"]
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
