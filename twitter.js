@@ -28,8 +28,6 @@ function arr_diff (a1, a2) {
     return diff;
 }
 
-// "default_icon": "./assets/icon16.png",
-
 function addInstapaperAction() {
     
     var tweets = document.querySelectorAll('div[class="css-1dbjc4n"] div[class="css-901oao r-18jsvk2 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"]');

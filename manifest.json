@@ -11,14 +11,11 @@
   "action": {
     "default_popup": "popup.html"
   },
-  "background":{
-    "service_worker": "background.js"
-  },
   "content_scripts": [
     {
       "matches": ["*://*.twitter.com/*"],
       "js": ["twitter.js"]
     }
   ],
-  "permissions": [ "storage", "activeTab", "contextMenus", "http://*/*", "https://*/*" ]
+  "permissions": [ "storage", "activeTab", "contextMenus"]
 }
