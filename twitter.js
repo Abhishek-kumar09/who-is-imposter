@@ -1,3 +1,5 @@
+import * as tf from '@tensorflow/tfjs';
+
 function parentWithClassName(el, className) {
     while ((el = el.parentNode) && (!el.classList || !el.classList.contains(className)));
     return el;
@@ -31,6 +33,8 @@ function arr_diff (a1, a2) {
 function addInstapaperAction() {
     
     var tweets = document.querySelectorAll('div[class="css-1dbjc4n"] div[class="css-901oao r-18jsvk2 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"]');
+    
+    console.log('Model', tf.loadLayersModel("./model/my_model/model.json"));
 
     for (var i = 0; i < tweets.length; i++) {
 
@@ -42,11 +46,22 @@ function addInstapaperAction() {
                 
         if (!tweets_list.includes(result)){
             tweets_list.push(result)
-            console.log(result)
+            // console.log(result)
         }
 
-        tweet_link.style.filter = "blur(10px)";                
-        
+        // condition prob >0.9
+        // 1. Tokenization
+        // hello world -> ["hello", "world"] -> [10, 5]
+        // {""hello": 10, "world": 5}
+        // 2. Padding -> 10
+        // vector = [10, 5, 0, 0, 0, 0, 0,0, 0, 0,] -> size - 10
+        // prob = model.predict(vector)
+        // if (prob > 0.9)
+        // {
+        //      blur the tweet
+        //      add a button to deblur the tweet
+        // }
+        tweet_link.style.filter = "blur(10px)";                   
 
     }
     
