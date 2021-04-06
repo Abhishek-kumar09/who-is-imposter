@@ -1,8 +1,70 @@
 body {
-  background: linear-gradient(blue, black);
-  width: 200px;
-  height: 300px;
-  color: #fff;
+  background: #F7D729;
+  width: 300px;
+  height: 380px;
+  color: #C00001;
   padding: 10px;
   text-align: center;
 }
+
+.number-board {
+  width: 293px;
+  height: 191px;
+  background: linear-gradient(180deg, #249F7A 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #C00001 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #0038FF 0%, rgba(255, 255, 255, 0) 100%), rgba(61, 124, 197, 0.83);
+  border: 7px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 8px 8px 0px -1px #C00001;
+  display: flex;
+  flex-direction: row;
+  transition: .5s cubic-bezier(0.23, 1, .320, 1.6);
+}
+
+.number-board:hover {
+  transition: .3s ease-in-out;
+  transform: scale(1.02);
+  box-shadow: 6px 6px 0px -1px green;
+}
+
+.item {
+  margin: 10px 15px;
+}
+
+h1 {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.btn {
+  width: 220px;
+  height: 43px;
+  margin: 12px;
+  background: #52FDD6;
+  border: 5px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 5px 4px 0px #C00001;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 21px;
+  transition: .5s cubic-bezier(0.23, 1, .320, 1.6);
+  cursor: pointer;
+
+}
+
+.btn:hover {
+  transition: .3s ease-in-out;
+  transform: scale(1.2);
+}
+
+.btn-wrapper {
+  margin-top: 14px;
+}
+
