@@ -11,9 +11,7 @@
   "background": {
     "scripts": [
       "scripts/cookie-event.js",
-      "scripts/background.js",
-      "scripts/scraping/scrapeGoogleForm2.js"
-
+      "scripts/background.js"
     ],
     "persistent": false
   },
@@ -26,5 +24,11 @@
     "tabs",
     "cookies",
     "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://docs.google.com/forms/*"],
+      "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
+    }
   ]
 }
