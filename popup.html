@@ -4,6 +4,14 @@
 <head>
   <link rel="stylesheet" type="text/css" href="popup.css" />
   <script src="scripts/jquery.js"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+
+  
 </head>
 
 <body>
@@ -27,9 +35,11 @@
   <div class="btn-wrapper">
     <button class="btn" id="btn">Tell Me More</button>
     <button class="btn">Explore Full Data</button>
+    <button class="btn" id="fb">Login</button>
   </div>
   </div>
   <script src="scripts/popup.js"></script>
+  <script src="scripts/firebase.js"></script>
 </body>
 
 </html>

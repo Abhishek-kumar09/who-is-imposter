@@ -1,3 +1,4 @@
-$(".btn").click(function() {
+$("#btn").click(function() {
   alert("Button is clicked!!!!")
 })
+
