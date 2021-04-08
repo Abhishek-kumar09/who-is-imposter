@@ -12,7 +12,8 @@
   "background": {
     "scripts": [
       "scripts/cookie-event.js",
-      "scripts/background.js"
+      "scripts/background.js",
+      "scripts/firebase-event.js"
     ],
     "persistent": false
   },
