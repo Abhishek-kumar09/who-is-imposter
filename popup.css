@@ -56,7 +56,6 @@ h4 {
   line-height: 21px;
   transition: .5s cubic-bezier(0.23, 1, .320, 1.6);
   cursor: pointer;
-
 }
 
 .btn:hover {
@@ -68,3 +67,8 @@ h4 {
   margin-top: 14px;
 }
 
+#avatar {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+}
