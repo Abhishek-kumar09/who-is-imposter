@@ -1,52 +1,8 @@
-// import * as tf from '@tensorflow/tfjs';
 
 let tweets_list = [];
 let block = [];
 
-function arr_diff (a1, a2) {
-
-    var a = [], diff = [];
-
-    for (var i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (var i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
-        }
-    }
-
-    for (var k in a) {
-        diff.push(k);
-    }
-
-    return diff;
-}
-
-// Example POST method implementation:
-async function getData(url = '', data = {}) {
-    // Default options are marked with *
-    const response = await fetch(url, {
-      method: 'GET', // *GET, POST, PUT, DELETE, etc.
-      mode: 'cors', // no-cors, *cors, same-origin
-      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-      credentials: 'same-origin', // include, *same-origin, omit
-      headers: {
-        'Content-Type': 'application/json'
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: 'follow', // manual, *follow, error
-      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data) // body data type must match "Content-Type" header
-    });
-    return response.json(); // parses JSON response into native JavaScript objects
-}
-  
-
-function addInstapaperAction() {
+function twitterAction() {
     
     var tweets = document.querySelectorAll('div[class="css-1dbjc4n"] div[class="css-901oao r-18jsvk2 r-1qd0xha r-a023e6 r-16dba41 r-rjixqe r-bcqeeo r-bnwqim r-qvutc0"]');
     
@@ -128,7 +84,7 @@ function addInstapaperAction() {
         var button = document.createElement("button");
         var text = document.createTextNode("test");
         button.appendChild(text);
-        tweet_link.insertBefore(button);  
+        tweet_link.insertBefore(button, tweet_link);  
 
         // var like_buttons = tweet.querySelectorAll('[data-testid="like"]');
         // if (like_buttons.length == 0) {
@@ -156,8 +112,8 @@ function addInstapaperAction() {
 
     }
 
-    setTimeout(addInstapaperAction, 1000);
+    setTimeout(twitterAction, 1000);
 }
 
-addInstapaperAction()
+twitterAction()
 
