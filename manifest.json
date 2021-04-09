@@ -5,10 +5,9 @@
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://apis.google.com/ https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
   "icons": {
-<<<<<<< HEAD
-    "128": "./assets/icon128.png",
-    "48": "./assets/icon48.png",
-    "16": "./assets/icon16.png"
+    "128": "images/icon128.png",
+    "48": "images/icon48.png",
+    "16": "images/icon16.png"
   },
   "action": {
     "default_popup": "popup.html"
@@ -17,14 +16,12 @@
     {
       "matches": ["*://*.twitter.com/*"],
       "js": ["twitter.js"]
-    }
+    },
+    {
+      "matches": ["*://docs.google.com/forms/*"],
+      "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
+    }    
   ],
-  "permissions": [ "storage", "activeTab", "contextMenus"]
-=======
-    "128": "images/icon128.png",
-    "48": "images/icon48.png",
-    "16": "images/icon16.png"
-  },
   "background": {
     "scripts": [
       "scripts/cookie-event.js",
@@ -41,13 +38,7 @@
     "tabs",
     "cookies",
     "*://*/*",
-    "identity"
-  ],
-  "content_scripts": [
-    {
-      "matches": ["*://docs.google.com/forms/*"],
-      "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
-    }
+    "identity",
+    "storage", "activeTab", "contextMenus"
   ]
->>>>>>> origin/stash
 }
