@@ -26,5 +26,11 @@
     "cookies",
     "*://*/*",
     "identity"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://docs.google.com/forms/*"],
+      "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
+    }
   ]
 }
