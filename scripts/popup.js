@@ -10,8 +10,7 @@ function checkSignIn() {
     })
 }
 
-checkSignIn()
-
+// checkSignIn()
 function signOut() {
   chrome.runtime.sendMessage({ message: 'sign_out' }, function (response) {
     if (response.message === 'success' && window.location.pathname !== '/popup.html') {

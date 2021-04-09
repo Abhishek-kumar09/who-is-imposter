@@ -1,4 +1,4 @@
-let user_signed = false
+let user_signed = true
 
 chrome.runtime.onMessage.addListener(function (req, sender, send) {
   if(req.message === 'is_user_signed_in') {
@@ -9,6 +9,7 @@ chrome.runtime.onMessage.addListener(function (req, sender, send) {
   }
 
   else if(req.message === 'sign_out') {
+    user_signed = true
     send({
       message: 'success'
     })
@@ -16,5 +17,3 @@ chrome.runtime.onMessage.addListener(function (req, sender, send) {
 
   return true
 })
-
-console.log(document)

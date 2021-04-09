@@ -4,42 +4,42 @@ var config = {
 };
 
 firebase.initializeApp(config);
+
 var provider = new firebase.auth.GoogleAuthProvider();
+let photoUrl = "../images/icon48.png"
 
 $("#fb").click(function () {
+  chrome.windows.create({
+    url: '../login.html',
+    width: 150,
+    height: 250,
+    focused: true
+  })
+})
+
+$("#fbpop").click(function () {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-
-      // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = credential.accessToken;
-      // The signed-in user info.
       var user = result.user;
-      // ...
+      photoUrl = user.photoURL
+      updatePhotoUrl()
     }).catch((error) => {
       console.log(error)
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // The email of the user's account used.
-      var email = error.email;
-      // The firebase.auth.AuthCredential type that was used.
-      var credential = error.credential;
-      // ...
     });
+
+  setTimeout(() => {
+    $("#login-wrapper").html("<h2>You can close the window once signIn event is completed")
+  }, 4000);
 })
 
-let photoUrl = "../images/icon48.png"
-
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     console.log(user.photoURL)
     photoUrl = user.photoURL
     updatePhotoUrl()
   } else {
-    console.log("No user found")
+    window.location.replace('../popup.html')
   }
 });
 
