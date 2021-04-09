@@ -2,8 +2,10 @@
   "name": "Who is Imposter",
   "description": "Get to know the secret surprises behind who let your data sucked",
   "version": "1.0",
-  "manifest_version": 3,
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://apis.google.com/ https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
   "icons": {
+<<<<<<< HEAD
     "128": "./assets/icon128.png",
     "48": "./assets/icon48.png",
     "16": "./assets/icon16.png"
@@ -18,4 +20,34 @@
     }
   ],
   "permissions": [ "storage", "activeTab", "contextMenus"]
+=======
+    "128": "images/icon128.png",
+    "48": "images/icon48.png",
+    "16": "images/icon16.png"
+  },
+  "background": {
+    "scripts": [
+      "scripts/cookie-event.js",
+      "scripts/background.js",
+      "scripts/firebase-event.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "images/icon16.png",
+    "default_title": "Who is Imposter",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "cookies",
+    "*://*/*",
+    "identity"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://docs.google.com/forms/*"],
+      "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
+    }
+  ]
+>>>>>>> origin/stash
 }
