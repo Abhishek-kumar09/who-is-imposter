@@ -1,4 +1,25 @@
 {
+<<<<<<< HEAD
+  "name": "who-is-imposter",
+  "version": "1.0.0",
+  "description": "Get to know the secret surprises behind who let your data sucked",
+  "main": "popup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhishek-kumar09/who-is-imposter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhishek-kumar09/who-is-imposter/issues"
+  },
+  "homepage": "https://github.com/Abhishek-kumar09/who-is-imposter#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^3.3.0"
+=======
   "name": "webScrapeJs",
   "version": "1.0.0",
   "description": "",
@@ -12,5 +33,6 @@
   "dependencies": {
     "puppeteer": "^8.0.0",
     "touch": "^3.1.0"
+>>>>>>> origin/stash
   }
 }

@@ -5,6 +5,22 @@
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://apis.google.com/ https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'",
   "icons": {
+<<<<<<< HEAD
+    "128": "./assets/icon128.png",
+    "48": "./assets/icon48.png",
+    "16": "./assets/icon16.png"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.twitter.com/*"],
+      "js": ["twitter.js"]
+    }
+  ],
+  "permissions": [ "storage", "activeTab", "contextMenus"]
+=======
     "128": "images/icon128.png",
     "48": "images/icon48.png",
     "16": "images/icon16.png"
@@ -33,4 +49,5 @@
       "js": ["./scripts/scraping/finalGoogleFormScraper.js"]
     }
   ]
+>>>>>>> origin/stash
 }
