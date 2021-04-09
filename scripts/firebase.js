@@ -21,25 +21,21 @@ $("#fbpop").click(function () {
   firebase.auth()
     .signInWithPopup(provider)
     .then((result) => {
-      var user = result.user;
-      photoUrl = user.photoURL
-      updatePhotoUrl()
+      window.open('', '_self').close()
     }).catch((error) => {
       console.log(error)
     });
-
-  setTimeout(() => {
-    $("#login-wrapper").html("<h2>You can close the window once signIn event is completed")
-  }, 4000);
 })
 
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
+    if (window.location.pathname !== '/main.html') {
+      window.location.replace('../main.html')
+    }
     console.log(user.photoURL)
     photoUrl = user.photoURL
     updatePhotoUrl()
   } else {
-    window.location.replace('../popup.html')
   }
 });
 
