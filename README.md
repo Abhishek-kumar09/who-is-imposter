@@ -15,3 +15,42 @@ Your data can be categorised into 3 categories:
 **Scamming purpose data**: Mobile Number where you can get potential spam calls if you expose it to someone.
 
 **Normal Data**: Your email adresses, etc. It keeps a minimal record of everydata you give to the websites and categorise those data as according.
+
+## Build Setup
+
+```bash
+# install dependencies
+npm install
+
+# development run
+npm run start
+
+# build for production
+npm run build
+```
+
+## Design
+
+- Home : https://www.figma.com/file/QQgKJkUVNRV1Y0VGkH6RLt/who-is-imposter?node-id=0%3A1
+
+## Project Structure
+
+    .
+    ├── build                   # Compiled files
+    ├── src                     # Source files
+    └── ...
+
+## Src Structure
+
+    .
+    ├── ...
+    ├── src
+    │   ├── ...
+    │   ├── assets              # assets for the website
+    |   ├── index.js            # starting point
+    │   └── ...
+    └── ...
+
+## Contributions and PR
+- PRs and contributions are welcome if you find any bug
+- Feel free to create your own issues and work on existing issues and come up with PR
