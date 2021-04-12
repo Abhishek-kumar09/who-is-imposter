@@ -11,5 +11,7 @@ Additionally, it is a **Chrome Extension** that helps you check the issues you m
 Your data can be categorised into 3 categories:
 
 **Most secure data**: Credit, Debit cards etc
+
 **Scamming purpose data**: Mobile Number where you can get potential spam calls if you expose it to someone.
+
 **Normal Data**: Your email adresses, etc. It keeps a minimal record of everydata you give to the websites and categorise those data as according.
