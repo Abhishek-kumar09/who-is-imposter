@@ -54,3 +54,18 @@ npm run build
 ## Contributions and PR
 - PRs and contributions are welcome if you find any bug
 - Feel free to create your own issues and work on existing issues and come up with PR
+
+## How to use this extension?
+
+- Fork this repository
+- Clone it for local use
+- Click on the extensions icon on the top-right corner of your chrome window and click on 'Manage Extensions'
+- Turn on the developer mode from the top-right button on the page
+- Then click on the 'Load Unpacked' button and choose the directory where you cloned this repo from your forked repo
+- You will see the extension with our logo appear up, it can be used now
+- You may pin it in order to click on it and see a quick view of the extension
+
+![imposter](https://user-images.githubusercontent.com/64865136/114415040-f6222a80-9bcc-11eb-89cb-7ea49e3d76de.jpg)
+
+
+**Note** - *If you want to make changes and see the changes work, don't forget to 'update' the extension from the 'Manage extensions' tab*
